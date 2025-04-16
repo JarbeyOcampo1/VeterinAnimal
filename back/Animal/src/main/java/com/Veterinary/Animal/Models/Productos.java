@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//Anotaciones de Lombok para generar getters, setters, constructores y toString
+//Anotaciones de JPA para mapear la clase a una tabla de la base de datos
 @Entity
 @Table(name = "productos")
 @Data
@@ -16,6 +18,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Productos {
     
+    //Atributos de la clase Productos
+    //Atributo id del producto, se genera automaticamente
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long productoID;

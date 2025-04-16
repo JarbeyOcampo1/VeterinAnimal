@@ -11,6 +11,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+//Anotaciones de Lombok para generar getters, setters, constructores y toString
+//Anotaciones de JPA para mapear la clase a una tabla de la base de datos
 @Entity
 @Table(name = "cirugias")
 @Data
@@ -18,6 +20,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Cirugias {
     
+    //Atributos de la clase Cirugias
+    //Atributo id de la cirugia, se genera automaticamente
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long cirugiaID;
