@@ -3,20 +3,22 @@ package com.Veterinary.Animal.Controllers;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import com.Veterinary.Animal.Models.Productos;
 import com.Veterinary.Animal.repositories.ProductosRepositorie;
 
+//Ruta de la clase ProductosController
+//Controlador de la clase Productos
 @RestController
 @RequestMapping("/api/productos")
 public class ProductosController {
 
+    //Inyeccion de dependencias de la clase ProductosRepositorie
     @Autowired
     private ProductosRepositorie productosRepositorie;
 
     // Obtener todos los productos
     @GetMapping
-    public List<Productos> getAllProductos() {
+    public List <Productos> getAllProductos() {
         return productosRepositorie.findAll();
     }
 
