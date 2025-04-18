@@ -25,7 +25,7 @@ public class PropietariosController {
 
     //Metodo para obtener todos los propietarios
     @GetMapping
-    public List <Propietarios> getAllPropietarios() {
+    public List <Propietarios> getAllPropietarios () {
         return propietariosRepositorie.findAll();
     }
 

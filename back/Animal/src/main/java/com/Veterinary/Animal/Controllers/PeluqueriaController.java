@@ -19,7 +19,7 @@ import com.Veterinary.Animal.repositories.PeluqueriaRepositorie;
 //Ruta de la clase PeluqueriaController
 //Controlador de la clase Peluqueria
 @RestController
-@RequestMapping("/api/peluqueria")
+@RequestMapping("/api/peluquerias")
 public class PeluqueriaController {
 
     //Inyeccion de dependencias de clase PeluqueriaRepositorie
@@ -28,7 +28,7 @@ public class PeluqueriaController {
 
     //Obtener todas las citas de la peluqueria
     @GetMapping
-    public List <Peluqueria> getAllPeluqueria() {
+    public List <Peluqueria> getAllPeluqueria () {
         return peluqueriaRepositorie.findAll();
     }
     
