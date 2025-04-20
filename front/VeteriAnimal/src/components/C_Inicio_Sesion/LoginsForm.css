@@ -1,0 +1,79 @@
+/* Contenedor principal del formulario */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 0 20px;
+}
+
+/* Título del formulario */
+.logins-title {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    color: hsl(180, 25%, 25%);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilos del formulario */
+.login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: hsl(108, 74%, 85%);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Cada grupo de etiqueta + input */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: hsl(0, 0%, 20%);
+}
+
+/* Estilos para los inputs */
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Cuando el input está enfocado */
+.form-group input:focus {
+    border-color: hsl(123, 73%, 50%);
+    outline: none;
+}
+
+/* Botón de enviar */
+.form-button {
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+    padding: 12px;
+    background-color: hsl(120, 69%, 63%);
+    border: none;
+    border-radius: 8px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Efecto hover del botón */
+.form-button:hover {
+    background-color: hsl(0, 49%, 67%);
+}
+
