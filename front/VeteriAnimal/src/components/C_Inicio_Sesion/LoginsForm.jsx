@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import './LoginsForm.css';
 
 function LoginsForm ({onSubmit, initialLogin}) {
 

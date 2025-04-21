@@ -3,7 +3,7 @@
     text-align: center;
     font-size: 36px;
     font-weight: bold;
-    color: hsl(180, 25%, 25%); /* color elegante */
+    color: hsl(0, 0%, 100%); /* color elegante */
     margin-bottom: 20px;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
@@ -22,7 +22,7 @@
     width: 100%;
     max-width: 400px;
     padding: 30px;
-    background-color: hsl(108, 74%, 85%);
+    background-color:  hsl(180, 25%, 25%);
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
@@ -38,7 +38,7 @@
     font-weight: 600;
     font-size: 18px;
     margin-bottom: 8px;
-    color: #333;
+    color: #f1f1f1;
 }
 
 /* Estilos para los inputs */
@@ -77,10 +77,12 @@
 .form-button {
     width: 48%;
     padding: 12px;
-    background-color: hsl(199, 84%, 50%);
+    background-color: rgb(109, 115, 119);
     border: none;
+    display: block;
+    margin: 0 auto;
     border-radius: 8px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -89,7 +91,7 @@
 
 /* Efecto al pasar el mouse por el botón */
 .form-button:hover {
-    background-color: hsl(2, 80%, 56%);
+    background-color: #222
 }
 
 /* Estilos para el enlace de "Registrarse" */
@@ -97,9 +99,9 @@
     display: block;
     text-align: center;
     margin-top: 20px;
-    color: #007bff;
+    color: #ebeef3;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .register-link:hover {
@@ -110,10 +112,10 @@
 .cancel-button {
     width: 48%;
     padding: 12px;
-    background-color: hsl(355, 78%, 55%);
+    background-color: rgb(109, 115, 119);
     border: none;
     border-radius: 8px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
@@ -122,5 +124,5 @@
 
 /* Efecto al pasar el mouse por el botón cancelar */
 .cancel-button:hover {
-    background-color: hsl(199, 84%, 50%);
+    background-color: #222
 }
