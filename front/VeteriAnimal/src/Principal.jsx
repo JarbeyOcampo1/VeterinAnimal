@@ -5,6 +5,7 @@ import imagen4 from './components/image/imagen4.jpg'
 import imagen2 from './components/image/imagen2.jpg'
 import imagen3 from './components/image/imagen3.jpg'
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 import './Principal.css'
 
 function Principal () {
@@ -34,6 +35,7 @@ function Principal () {
             </div>
              {/* Barra de navegación con el botón de salir */}
             <nav className="navbar">
+              <Link to="/Productos"> Productos</Link>
               <button onClick={handleLogout} className="logout-button">Salir</button>
             </nav>
           </div>
