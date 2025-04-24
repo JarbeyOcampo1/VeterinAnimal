@@ -30,6 +30,17 @@ function Productos () {
                 </div>
                 {/* Barra de navegación con el botón de salir */}
                 <nav className="navbar">
+                    <div className="menu-service">
+                        <span className="menu-service-span"> Servicios </span>
+                        <div className="menu-service-content">
+                            <Link to="/Cirugias" className="menu-subitem"> Cirugias </Link>
+                            <Link to="/Consultas" className="menu-subitem"> Consultas </Link>
+                            <Link to="/Hospitalizados" className="menu-subitem"> Hospitalizados </Link>
+                            <Link to="/Propietarios" className="menu-subitem"> Propietarios </Link>
+                            <Link to="/Pacientes" className="menu-subitem"> Pacientes </Link>
+                        </div>
+                    </div>
+                    <Link to="/Peluqueria"> Peluqueria </Link>
                     <Link to="/Principal"> Principal </Link>
                     <button onClick={handleLogout} className="logout-button">Salir</button>
                 </nav>

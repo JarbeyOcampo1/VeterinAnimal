@@ -190,3 +190,53 @@ img {
     transform: scale(1.2);
     color: rgb(109, 115, 119);
 }
+
+/* Contenedor del menú "Servicios" */
+.menu-service {
+    position: relative;
+    display: inline-block;
+    font-size: 1.6vw;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* Texto principal del menú */
+.menu-service-span {
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+/* Contenido desplegable */
+.menu-service-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(180, 25%, 25%);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 10px;
+}
+
+/* Mostrar el contenido al pasar el mouse */
+.menu-service:hover .menu-service-content {
+    display: block;
+}
+
+/* Subopciones del menú */
+.menu-subitem {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 1.2vw;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hover para subitems */
+.menu-subitem:hover {
+    background-color: hsl(180, 25%, 35%);
+    transform: scale(1.05);
+    color: black;
+}
+

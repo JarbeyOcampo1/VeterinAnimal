@@ -3,21 +3,21 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo1 from "../image/Logo1.jpg";
 
-
-function Peluqieria () {
+function Cirugias () {
 
     // Inicializamos la función de navegación
-    const navigate = useNavigate() 
-    
+    const navigate = useNavigate();
+
     // Verifica si el token de autenticación existe en el almacenamiento local
-    useEffect ( () => {
-        const auntenticar = localStorage.getItem("Exito");
-        if (!auntenticar) {
+    useEffect(() => {
+        const autenticar = localStorage.getItem("Exito");
+
+        if (!autenticar) {
             navigate("/");
         }
     },[navigate]);
 
-    // Función para cerrar sesión
+     // Función para cerrar sesión
     const handleLogout = () => {
         localStorage.removeItem("Exito");
         navigate("/");
@@ -27,7 +27,7 @@ function Peluqieria () {
         <div>
             <div className="Container_Principal">
                 <div className="logo-container">
-                    <img src={Logo1} alt="Logo principal" className="principal-logo-image" />
+                    <img src={Logo1} alt="Logo principal" className="principal-logo-image"/>
                 </div>
                 {/* Barra de navegación con el botón de salir */}
                 <nav className="navbar">
@@ -41,15 +41,13 @@ function Peluqieria () {
                         </div>
                     </div>
                     <Link to="/Principal"> Principal </Link>
+                    <Link to="/Peluqueria"> Peluqueria </Link>
                     <Link to="/Productos"> Productos </Link>
-                    <button onClick={handleLogout} className="logout-button">Salir</button>
+                    <button onClick={handleLogout} className="logout-button"> Salir </button>
                 </nav>
             </div>
-
-
-            
         </div>
     );
 }
 
-export default Peluqieria;
+export default Cirugias;
