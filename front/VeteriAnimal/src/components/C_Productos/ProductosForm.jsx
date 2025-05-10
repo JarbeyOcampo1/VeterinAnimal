@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 function ProductosForm ({onSubmit, initialRest}) {
 
-    // Estados para los campos del formulario
+    // estados para cada campo del formulario
     const [nombreProducto, setNombreProducto] = useState('');
     const [tipoProducto, setTipoProducto] = useState('');
     const [descripcionProducto, setDescripcionProducto] = useState('');
@@ -10,7 +10,8 @@ function ProductosForm ({onSubmit, initialRest}) {
     const [precioProducto, setPrecioProducto] = useState('');
     const [cantidadProducto, setCantidadProducto] = useState('');
 
-    // Función para manejar el envío del formulario
+    // useEffect se ejecuta cuando cambian los props (en este caso, initialRest)
+    // Si initialRest existe, llenamos el formulario con sus valores (modo edición)
     useEffect (() => {
 
         if (initialRest) {
@@ -23,10 +24,13 @@ function ProductosForm ({onSubmit, initialRest}) {
         }
     },[initialRest])
 
-    // Función para manejar el envío del formulario
+    // Función que se ejecuta al enviar el formulario
     const handleSubmit = (event) => {
+        // Evitamos que el formulario recargue la página
         event.preventDefault();
+        // Creamos un objeto con todos los datos del formulario
         const resData = {nombreProducto, tipoProducto, descripcionProducto, marcaProducto, precioProducto, cantidadProducto};
+        // Llamamos a la función que recibimos por props pasando los datos del producto
         onSubmit(resData);
         setNombreProducto('');
         setTipoProducto('');
@@ -36,8 +40,10 @@ function ProductosForm ({onSubmit, initialRest}) {
         setCantidadProducto('');
     }
 
+    // Retornamos el JSX del formulario
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
+            {/* Campos controlados de los productos */}
             <div>
                 <label> Nombre </label>
                 <input type="text"  placeholder="Nombre del producto" value={nombreProducto} onChange={(e) => setNombreProducto(e.target.value)} required/>
@@ -62,6 +68,7 @@ function ProductosForm ({onSubmit, initialRest}) {
                 <label> Precio </label>
                 <input type="number" placeholder="Precio del producto" value={precioProducto} onChange={(e) => setPrecioProducto(e.target.value)} required/>
             </div>
+             {/* Botón de envío que cambia su texto dependiendo si estamos en modo edición o creación */}
             <div>
                 <button type="submit" > {initialRest ? 'Actualizar' : 'Agregar'} </button>
             </div>

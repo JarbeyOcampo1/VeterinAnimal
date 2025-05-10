@@ -18,7 +18,7 @@ function App() {
     // Se definen las rutas y los componentes que se renderizarán para cada una
     <BrowserRouter>
         <Routes>
-          <Route index element={<InicioSesionForm/>} />
+          <Route path='/' element={<InicioSesionForm/>} />
           <Route path="/Logins" element={<Logins/>}/>
           <Route path='/Principal' element={<Principal/>}/>
           <Route path='/Productos' element={<Productos/>}/>
