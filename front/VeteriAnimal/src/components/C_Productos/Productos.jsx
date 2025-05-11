@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import Logo1 from "../image/Logo1.jpg";
 import axios from "axios";
 import ProductosForm from "./ProductosForm";
+import ProductosTable from "./ProductosTable";
+import './Productos.css';
 
 function Productos () {
 
@@ -44,20 +46,37 @@ function Productos () {
         }
     };
 
-    const handleCreateOrUpdate = async (productoData) => {
-
-    };  
-
     // Crear un producto
-    const createProducto = async (productoData) => {
+    const createOrUpdateProducto = async (productoData) => {
         try {
-            await axios.post(`http://localhost:8080/api/productos`, productoData);
-            await fetchProducto();
+            if (editingProducto) {
+                await axios.put(`http://localhost:8080/api/productos/${editingProducto.productoID}`,productoData);
+            }else {
+                await axios.post(`http://localhost:8080/api/productos`, productoData);
+                await fetchProducto();
+            }
         } catch (error) {
             console.log('Error al crear un producto', error);
         }
         fetchProducto();
+        setEditingProducto(null);
     };
+
+    // Editar un producto
+    const handleEditProducto = (producto) => {
+        setEditingProducto(producto);
+    }
+
+    // Eliminar un producto
+    const handleDeleteProducto = async (productoID) => {
+        try {
+            await axios.delete(`http://localhost:8080/api/productos/${productoID}`);
+            fetchProducto();
+        } catch (error) {
+            alert('Error al eliminar el producto', error);
+        }
+    }
+
 
     return(
         <div>
@@ -82,9 +101,12 @@ function Productos () {
                     <button onClick={handleLogout} className="logout-button">Salir</button>
                 </nav>
             </div>
-            <div>
-                <h1> Productos </h1>
-                <ProductosForm onSubmit={createProducto}/>
+            <div className="productos-container-principal">
+                <h1 className="productos-h1-title"> Productos </h1>
+                <ProductosTable productos={producto} onEdit={handleEditProducto} onDelete={handleDeleteProducto} />
+                <br />
+                <h2 className="productos-h2-edit-create">{editingProducto ? 'Editar Producto':'Crear un producto'}</h2>
+                <ProductosForm onSubmit={createOrUpdateProducto} initialRest={editingProducto}/>
             </div>
         </div>
     );

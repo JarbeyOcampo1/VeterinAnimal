@@ -1,59 +1,72 @@
-/* ProductosTable.css */
+/* Contenedor general que limita el ancho de la tabla */
+.productos-table-container {
+  max-width: 90vw;  
+  margin: 30px auto; 
+  overflow-x: auto; 
+  
+}
 
+/* Tabla estilizada */
 .productos-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
-  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.productos-table th,
-.productos-table td {
-  padding: 0.75rem 1rem;
-  text-align: left;
-  border: 1px solid #ddd;
+/* Encabezado */
+.productos-table-header {
+  background-color: hsl(180, 25%, 25%);
+  color: white;
+  text-align: center;
+  font-size: 1.1rem;
+  
 }
 
-.productos-table th {
-  background-color: #f0f0f0;
+/* Fila de encabezado */
+.productos-table-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Celdas del encabezado */
+.productos-th {
+  padding: 15px;
   font-weight: bold;
 }
 
-.productos-table tbody tr:nth-child(even) {
-  background-color: #fafafa;
+/* Cuerpo de la tabla */
+.productos-table-body tr {
+  border-bottom: 1px solid #868484;
+  transition: background-color 0.2s ease;
+  text-align: center;
 }
 
-.productos-table tbody tr:hover {
-  background-color: #f5faff;
+/* Hover sobre filas */
+.productos-table-body tr:hover {
+  background-color: #f0f8f8;
 }
 
-.productos-table td:last-child {
+/* Celdas */
+.productos-table-body td {
+  padding: 15px;
+  font-size: 1rem;
+  color: #020202;
+
+}
+
+/* Celda de acciones */
+.productos-table-body td:last-child {
   display: flex;
-  gap: 0.5rem;
-  /* Opcional: centrar los botones */
-  align-items: center;
+  gap: 10px;
+  justify-content: center;
 }
 
-/* Estilos para los botones dentro de Acciones */
-.productos-table button {
-  padding: 0.3rem 0.6rem;
-  font-size: 0.9rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: opacity 0.2s;
-}
-
-.productos-table button:hover {
-  opacity: 0.85;
-}
-
-.productos-table button:first-child {
-  background-color: #4caf50;
-  color: white;
-}
-
-.productos-table button:last-child {
-  background-color: #f44336;
-  color: white;
+/* Mensaje "no hay productos" */
+.productos-table-body td[colspan] {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-weight: bold;
 }

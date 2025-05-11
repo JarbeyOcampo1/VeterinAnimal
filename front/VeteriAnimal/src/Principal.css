@@ -5,10 +5,11 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh; 
+    min-height: 100vh; 
     margin: 0;
     padding: 0;
     backdrop-filter: blur(3px);
+    background-attachment: fixed;
     overflow-x: hidden;
 }
 

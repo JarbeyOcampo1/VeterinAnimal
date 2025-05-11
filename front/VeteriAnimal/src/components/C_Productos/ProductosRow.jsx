@@ -1,4 +1,4 @@
-
+import './ProductosRow.css';
 
 const  ProductosRow = ({producto, onEdit, onDelete}) => {
 
@@ -28,9 +28,9 @@ const  ProductosRow = ({producto, onEdit, onDelete}) => {
             <td>{producto.precioProducto}</td>
             <td>
                 {/* Celda de acciones con botones para editar y eliminar */}
-                <div>
-                    <button onClick={handleEdit}> Editar </button>
-                    <button onClick={handleDelete}> Eliminar </button>
+                <div className='productos-actions-row'>
+                    <button className="productos-button-edit" onClick={handleEdit}> Editar </button>
+                    <button className="productos-button-delete" onClick={handleDelete}> Eliminar </button>
                 </div>
             </td>
         </tr>

@@ -3,22 +3,23 @@ import "./ProductosTable.css";
 
 function ProductosTable ({productos, onEdit, onDelete}) {
     return (
-        <div>
+        <div className="productos-table-container">
             {/* Tabla */}
             <table className="productos-table">
                  {/* Encabezado de la tabla con los nombres de las columnas */}
-                <thead>
-                    <tr>
-                        <th> Nombre </th>
-                        <th> Tipo </th>
-                        <th> Marca </th>
-                        <th> Descripción </th>
-                        <th> Cantidad </th>
-                        <th> Precio </th>
+                <thead className="productos-table-header">
+                    <tr className="productos-table-row">
+                        <th className="productos-th"> Nombre </th>
+                        <th className="productos-th"> Tipo </th>
+                        <th className="productos-th"> Marca </th>
+                        <th className="productos-th"> Descripción </th>
+                        <th className="productos-th"> Cantidad </th>
+                        <th className="productos-th"> Precio </th>
+                        <th className="productos-th"> Acciones </th>
                     </tr>
                 </thead>
                 {/* Tabla donde van las filas de productos */}
-                <tbody>
+                <tbody className="productos-table-body">
                     {/* Si existen productos y hay al menos uno en el array */}
                     { productos && productos.length > 0 ? (
                         productos.map((producto) => (
