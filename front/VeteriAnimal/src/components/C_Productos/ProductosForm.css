@@ -1,3 +1,4 @@
+/* Contenedor del formulario, centrado con ancho máximo, fondo claro, bordes redondeados y sombra */
 .productos-form {
   max-width: 600px;
   margin: 0 auto;
@@ -7,18 +8,21 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Grupo de elementos del formulario con separación y organizados en columna */
 .productos-form-group {
   margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
 
+/* Etiqueta del formulario en negrita y con margen inferior para separación */
 .productos-label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   color: #000000;
 }
 
+/* Campo de entrada con padding, borde verde inicial, bordes redondeados y transición suave */
 .productos-input {
   padding: 0.75rem 1rem;
   border: 1px solid #ccc;
@@ -28,12 +32,14 @@
   border-color: hsl(123, 73%, 50%);
 }
 
+/* Estilo para el campo de entrada cuando está enfocado: borde azul y sombra */
 .productos-input:focus {
   border-color: #007bff;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
   outline: none;
 }
 
+/* Botón con fondo oscuro, texto blanco, padding, bordes redondeados y cursor pointer */
 .productos-button {
   background-color: hsl(180, 25%, 25%);
   color: white;
@@ -46,6 +52,7 @@
   font-weight: bold;
 }
 
+/* Cambio de color del botón al pasar el mouse para efecto hover */
 .productos-button:hover {
   background-color: #222;
 }
