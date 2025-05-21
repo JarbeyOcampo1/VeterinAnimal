@@ -27,7 +27,7 @@ function Productos () {
     };
 
     // Crear un estado para almacenar los productos
-    const  [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState([]);
     const [editingProducto, setEditingProducto] = useState(null);
 
     // Actualiza la lista de productos cada vez que se crea uno nuevo

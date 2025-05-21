@@ -1,3 +1,4 @@
+import './PropietariosRow.css'; 
 
 const PropietariosRow = ({propietario, onEdit, onDelete}) =>{
 
