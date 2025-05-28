@@ -5,6 +5,7 @@ import Logo1 from "../image/Logo1.jpg";
 import axios from "axios";
 import PacientesTable from "./PacientesTable";
 import PacientesForm from "./PacientesForm";
+import './Pacientes.css';
 
 function Pacientes () {
 
@@ -96,11 +97,11 @@ function Pacientes () {
                     <button onClick={handleLogout} className="logout-button">Salir</button>
                 </nav>
             </div>
-            <div>
-                <h1> Pacientes </h1>
+            <div className="pacientes-container-principal">
+                <h1 className="pacientes-h1-title"> Pacientes </h1>
                 <PacientesTable pacientes={paciente} onEdit={handleEditingPaciente} onDelete={handleDeletePaciente} />
                 <br />
-                <h2>{editingPaciente ? 'Editar paciente':'Crear paciente'}</h2>
+                <h2 className="pacientes-h2-edit-create">{editingPaciente ? 'Editar paciente':'Crear paciente'}</h2>
                 <PacientesForm onSubmit={CreateOrUpdatePaciente} initialPac={editingPaciente}/>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { data } from "react-router-dom";
+import './PacientesForm.css';
 
 function PacientesForm ({onSubmit, initialPac}) {
 
@@ -89,40 +89,40 @@ function PacientesForm ({onSubmit, initialPac}) {
                     <option className="pacientes-select-option" value="Hembra"> Hembra </option>
                 </select>
             </div>
-            <div>
-                <label> Edad </label>
-                <input type="number" placeholder="Edad del paciente" value={edad} onChange={(e) => setEdad(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Edad </label>
+                <input className="pacientes-input" type="number" placeholder="Edad del paciente" value={edad} onChange={(e) => setEdad(e.target.value)} required/>
             </div>
-            <div>
-                <label> Peso </label>
-                <input type="number" placeholder="Peso del paciente KG" value={pesoPaciente} onChange={(e) => setPesoPaciente(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Peso </label>
+                <input className="pacientes-input" type="number" placeholder="Peso del paciente KG" value={pesoPaciente} onChange={(e) => setPesoPaciente(e.target.value)} required/>
             </div>
-            <div>
-                <label> Color </label>
-                <input type="text" placeholder="Color del paciebte" value={colorPaciente} onChange={(e) => setColorPaciente(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Color </label>
+                <input className="pacientes-input" type="text" placeholder="Color del paciebte" value={colorPaciente} onChange={(e) => setColorPaciente(e.target.value)} required/>
             </div>
-            <div>
-                <label> Fecha de nacimiento </label>
-                <input type="date" placeholder="Feacha de nacimiento" value={fechaNacimiento} onChange={(e) => setFechaNacimiento(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Fecha de nacimiento </label>
+                <input className="pacientes-input" type="date" placeholder="Feacha de nacimiento" value={fechaNacimiento} onChange={(e) => setFechaNacimiento(e.target.value)} required/>
             </div>
-            <div>
-                <label> Historial </label>
-                <input type="text" placeholder="Historial del paciente" value={historialClinico} onChange={(e) => setHistorialClinico(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Historial </label>
+                <input className="pacientes-input" type="text" placeholder="Historial del paciente" value={historialClinico} onChange={(e) => setHistorialClinico(e.target.value)} required/>
             </div>
-            <div>
-                <label> Propietarios </label>
-                <select value={propietarioID} onChange={(e) => setPropietarioID(Number(e.target.value))} required>
-                    <option value=""> Selecciona un propietario </option>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Propietarios </label>
+                <select className="pacientes-select" value={propietarioID} onChange={(e) => setPropietarioID(Number(e.target.value))} required>
+                    <option className="pacientes-select-option" value=""> Selecciona un propietario </option>
                     {propietarios.map((propietario) => (
-                        <option key={propietario.propietarioID} value={propietario.propietarioID}>
+                        <option className="pacientes-select-option" key={propietario.propietarioID} value={propietario.propietarioID}>
                             {propietario.nombrePropietario} - C.C {propietario.cedulaPropietario}
                         </option>
                     ))}
                 </select>
             </div>
             {/* Botón de envío que cambia su texto dependiendo si estamos en modo edición o creación */}
-            <div>
-                <button type="submit"> {initialPac ? 'Actualizar':'Agregar'} </button>
+            <div className="pacientes-form-group">
+                <button  className="pacientes-button" type="submit"> {initialPac ? 'Actualizar':'Agregar'} </button>
             </div>
         </form>
     );

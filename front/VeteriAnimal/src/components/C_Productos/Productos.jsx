@@ -6,7 +6,7 @@ import axios from "axios";
 import ProductosForm from "./ProductosForm";
 import ProductosTable from "./ProductosTable";
 import './Productos.css';
-
+ 
 function Productos () {
 
     // Inicializamos la función de navegación

@@ -1,3 +1,5 @@
+import './PacientesRow.css';
+
 const PacientesRow = ({paciente, onEdit, onDelete}) => {
     
     // Función para manejar el evento de editar
@@ -30,9 +32,9 @@ const PacientesRow = ({paciente, onEdit, onDelete}) => {
             <td>{paciente.propietarioID?.nombrePropietario || 'N/A'}</td>
             <td>
                 {/* Celda de acciones con botones para editar y eliminar */}
-                <div>
-                    <button onClick={handleEdit}> Editar </button>
-                    <button onClick={handleDelete}> Eliminar </button>
+                <div className="pacientes-actions-row">
+                    <button className="pacientes-button-edit" onClick={handleEdit}> Editar </button>
+                    <button className="pacientes-button-delete" onClick={handleDelete}> Eliminar </button>
                 </div>
             </td>
         </tr>
