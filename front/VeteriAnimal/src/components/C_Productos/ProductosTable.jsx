@@ -1,6 +1,6 @@
 import ProductosRow from "./ProductosRow";
 import "./ProductosTable.css";
-
+ 
 function ProductosTable ({productos, onEdit, onDelete}) {
     return (
         <div className="productos-table-container">

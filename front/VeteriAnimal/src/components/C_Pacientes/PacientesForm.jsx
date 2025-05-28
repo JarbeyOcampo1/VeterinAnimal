@@ -20,6 +20,15 @@ function PacientesForm ({onSubmit, initialPac}) {
      // useEffect se ejecuta cuando cambian los props (en este caso, initialPac)
     // Si initialPac existe, llenamos el formulario con sus valores (modo edición)
     useEffect(() => {
+
+        fetch('http://localhost:8080/api/propietarios')
+        .then((response) => response.json())
+        .then((data) => {
+            const propietariosData = Array.isArray(data) ? data : data.content;
+            setPropietarios(propietariosData || []);;
+        })
+        .catch((error) => console.error('Error fetching propietarios:', error));
+
         if (initialPac) {
             setNombrePaciente(initialPac.nombrePaciente);
             setEspeciePaciente(initialPac.especiePaciente);
@@ -30,12 +39,7 @@ function PacientesForm ({onSubmit, initialPac}) {
             setColorPaciente(initialPac.colorPaciente);
             setFechaNacimiento(initialPac.fechaNacimiento);
             setHistorialClinico(initialPac.historialClinico);
-            setPropietarioID(initialPac.propietarioID);
-
-            fetch('http://localhost:8080/api/propietarios')
-            .then((response) => response.json())
-            .then((data) => setPropietarios(data))
-            .catch((error) => console.error('Error fetching propietarios:', error));
+            setPropietarioID(initialPac.propietarioID?.propietarioID || '');
         };
     },[initialPac]);
 
@@ -63,26 +67,26 @@ function PacientesForm ({onSubmit, initialPac}) {
     };
     
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="pacientes-form">
             {/* Campos controlados de los productos */}
-            <div>
-                <label> Nombre </label>
-                <input type="text" placeholder="Nombre del paciente" value={nombrePaciente} onChange={(e) => setNombrePaciente(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Nombre </label>
+                <input className="pacientes-input" type="text" placeholder="Nombre del paciente" value={nombrePaciente} onChange={(e) => setNombrePaciente(e.target.value)} required/>
             </div>
-            <div>
-                <label> Especie </label>
-                <input type="text" placeholder="Especie del paciente" value={especiePaciente} onChange={(e) => setEspeciePaciente(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Especie </label>
+                <input className="pacientes-input" type="text" placeholder="Especie del paciente" value={especiePaciente} onChange={(e) => setEspeciePaciente(e.target.value)} required/>
             </div>
-            <div>
-                <label>  Raza </label>
-                <input type="text" placeholder="Raza del paciente" value={razaPaciente} onChange={(e) => setRazaPaciente(e.target.value)} required/>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label">  Raza </label>
+                <input className="pacientes-input" type="text" placeholder="Raza del paciente" value={razaPaciente} onChange={(e) => setRazaPaciente(e.target.value)} required/>
             </div>
-            <div>
-                <label> Sexo </label>
-                <select value={sexoPaciente} onChange={(e) => setSexoPaciente(e.target.value)} required>
-                    <option value=""> Seleccionar </option>
-                    <option value="Macho"> Macho </option>
-                    <option value="Hembra"> Hembra </option>
+            <div className="pacientes-form-group">
+                <label className="pacientes-label"> Sexo </label>
+                <select className="pacientes-select" value={sexoPaciente} onChange={(e) => setSexoPaciente(e.target.value)} required>
+                    <option className="pacientes-select-option" value=""> Seleccionar </option>
+                    <option className="pacientes-select-option" value="Macho"> Macho </option>
+                    <option className="pacientes-select-option" value="Hembra"> Hembra </option>
                 </select>
             </div>
             <div>
@@ -103,11 +107,11 @@ function PacientesForm ({onSubmit, initialPac}) {
             </div>
             <div>
                 <label> Historial </label>
-                <textarea value={historialClinico} onChange={(e) => setHistorialClinico(e.target.value)} required/>
+                <input type="text" placeholder="Historial del paciente" value={historialClinico} onChange={(e) => setHistorialClinico(e.target.value)} required/>
             </div>
             <div>
                 <label> Propietarios </label>
-                <select value={propietarioID} onChange={(e) => setPropietarioID(e.target.value)} required>
+                <select value={propietarioID} onChange={(e) => setPropietarioID(Number(e.target.value))} required>
                     <option value=""> Selecciona un propietario </option>
                     {propietarios.map((propietario) => (
                         <option key={propietario.propietarioID} value={propietario.propietarioID}>

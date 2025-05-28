@@ -1,5 +1,7 @@
 package com.Veterinary.Animal.Models;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,7 +35,7 @@ public class Pacientes {
     private String edad;
     private String pesoPaciente;
     private String colorPaciente;
-    private String fechaNacimiento;
+    private LocalDate fechaNacimiento;
     private String historialClinico;
 
     //Relacion con propietario (muchos a uno)

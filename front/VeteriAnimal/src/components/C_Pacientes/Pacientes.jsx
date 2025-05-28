@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Logo1 from "../image/Logo1.jpg";
-
+import axios from "axios";
+import PacientesTable from "./PacientesTable";
+import PacientesForm from "./PacientesForm";
 
 function Pacientes () {
 
@@ -21,6 +23,54 @@ function Pacientes () {
     const handleLogout = () => {
         localStorage.removeItem("Exito");
         navigate("/");
+    };
+
+    // Crear un estado para almacenar los pacientes
+    const [paciente, setPaciente] = useState([]);
+    const [editingPaciente, setEditingPaciente] = useState(null);
+
+    // Actualiza la lista de pacientes cada vez que se crea uno nuevo
+    useEffect(() => {
+        fetchPaciente();
+    },[]);
+
+    // Recorre la lista de pacientes y retorna una respuesta
+    const fetchPaciente = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/api/pacientes');
+            setPaciente(response.data);
+        } catch (error) {
+            console.log('Error al cargar los datos', error);
+        }
+    };
+    
+    // Crear un paciente o actualizar uno existente
+    const CreateOrUpdatePaciente = async (pacienteData) => {
+        try {
+            if (editingPaciente) {
+                await axios.put(`http://localhost:8080/api/pacientes/${editingPaciente.pacienteID}`, pacienteData);
+            }else {
+                await axios.post(`http://localhost:8080/api/pacientes`, pacienteData);
+                await fetchPaciente();
+            }
+        } catch (error) {
+            console.log('Error al crear un paciente', error);
+        }
+    };
+
+    // Editar un paciente
+    const handleEditingPaciente = (paciente) => {
+        setEditingPaciente(paciente);
+    };
+
+    // Eliminar un paciente
+    const handleDeletePaciente = async (pacienteID) => {
+        try {
+            await axios.delete(`http://localhost:8080/api/pacientes/${pacienteID}`);
+            await fetchPaciente();
+        } catch (error) {
+            alert('Error al eliminar el paciente');
+        }
     };
 
     return (
@@ -46,7 +96,13 @@ function Pacientes () {
                     <button onClick={handleLogout} className="logout-button">Salir</button>
                 </nav>
             </div>
-
+            <div>
+                <h1> Pacientes </h1>
+                <PacientesTable pacientes={paciente} onEdit={handleEditingPaciente} onDelete={handleDeletePaciente} />
+                <br />
+                <h2>{editingPaciente ? 'Editar paciente':'Crear paciente'}</h2>
+                <PacientesForm onSubmit={CreateOrUpdatePaciente} initialPac={editingPaciente}/>
+            </div>
         </div>
     );
 }
