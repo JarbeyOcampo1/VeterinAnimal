@@ -1,0 +1,69 @@
+/* Contenedor general que limita el ancho de la tabla */
+.consultas-table-container {
+    max-width: 90vw;
+    margin: 30px auto;
+    overflow-x: auto;
+}
+
+/* Tabla estilizada */
+.consultas-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+.consultas-table-header {
+    background-color: hsl(180, 25%, 25%);
+    color: white;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Fila de encabezado */
+.consultas-table-row {
+    border-bottom: 1px solid #ccc;
+}
+
+/* Celdas del encabezado */
+.consultas-th {
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* Cuerpo de la tabla */
+.consultas-table-body tr {
+    border-bottom: 1px solid #868484;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+/* Hover sobre filas */
+.consultas-table-body tr:hover {
+    background-color: #f0f8f8;
+}
+
+/* Celdas del cuerpo */
+.consultas-table-body td {
+    padding: 15px;
+    font-size: 1rem;
+    color: #020202;
+}
+
+/* Celda de acciones */
+.consultas-table-body td:last-child {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Mensaje "no hay consultas" */
+.consultas-table-body td[colspan] {
+    text-align: center;
+    padding: 20px;
+    color: #888;
+    font-weight: bold;
+}

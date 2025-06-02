@@ -22,11 +22,7 @@ function InicioSesionForm () {
             const formData = new FormData(event.target);
             const nombreLogin = formData.get("usuario");
             const password = formData.get("password");
-            
-            // Imprime las credenciales antes de enviarlas
-            console.log("Nombre de usuario:", nombreLogin);
-            console.log("Contraseña:", password);
-   
+
             // peticion a la API para validar el inicio
             const response = await axios.post("http://localhost:8080/api/logins/validar", {
                 nombreLogin, 

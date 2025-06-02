@@ -122,7 +122,7 @@ function PacientesForm ({onSubmit, initialPac}) {
             </div>
             {/* Botón de envío que cambia su texto dependiendo si estamos en modo edición o creación */}
             <div className="pacientes-form-group">
-                <button  className="pacientes-button" type="submit"> {initialPac ? 'Actualizar':'Agregar'} </button>
+                <button  className="pacientes-button" type="submit"> {initialPac ? 'Actualizar' : 'Agregar'} </button>
             </div>
         </form>
     );
