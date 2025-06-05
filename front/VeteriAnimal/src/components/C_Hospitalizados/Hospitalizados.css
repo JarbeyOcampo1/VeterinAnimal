@@ -1,0 +1,27 @@
+/* Estilo para el contenedor principal de productos con fondo transparente */
+.hospitalizado-container-principal {
+    background-color: rgba(255, 255, 255, 0.507);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+}
+
+/* Título principal hospitalizado */
+.hospitalizado-h1-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: #000000;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Subtítulo para crear o editar productos */
+.hospitalizado-h2-edit-create {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
