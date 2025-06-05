@@ -26,7 +26,7 @@ function Peluqieria () {
         navigate("/");
     };
 
-    // Crear un estado para almacenar los pacientes
+    // Crear un estado para almacenar los peluqueria
     const [peluqueria, setPeluqueria] = useState([]);
     const [editingPeluqueria, setEditingPeluqueria] = useState(null);
 
@@ -85,6 +85,7 @@ function Peluqieria () {
                     <div className="menu-service">
                         <span className="menu-service-span"> Servicios </span>
                         <div className="menu-service-content">
+                            <Link to="/Cirugias" className="menu-subitem"> Cirugias </Link>
                             <Link to="/Consultas" className="menu-subitem"> Consultas </Link>
                             <Link to="/Hospitalizados" className="menu-subitem"> Hospitalizados </Link>
                             <Link to="/Propietarios" className="menu-subitem"> Propietarios </Link>

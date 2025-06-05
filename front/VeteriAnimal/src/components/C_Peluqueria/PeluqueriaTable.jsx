@@ -35,7 +35,6 @@ function PeluqueriaTable({peluquerias, onEdit, onDelete}) {
             </table>
         </div>
     );
-
 };
 
 export default PeluqueriaTable;

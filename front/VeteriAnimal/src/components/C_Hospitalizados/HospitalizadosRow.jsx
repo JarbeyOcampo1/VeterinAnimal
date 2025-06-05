@@ -29,8 +29,8 @@ const HospitalizadosRow = ({hospitalizado, onEdit, onDelete}) => {
             <td>{hospitalizado.diagnostico}</td>
             <td>{hospitalizado.costo}</td>
             <td>{hospitalizado.observaciones}</td>
-            <td>{hospitalizado.propietario?.nombrePropietario || 'N/A'}</td>
             <td>{hospitalizado.paciente?.nombrePaciente || 'N/A'}</td>
+            <td>{hospitalizado.propietario?.nombrePropietario || 'N/A'}</td>
             <td>
                 {/* Celda de acciones con botones para editar y eliminar */}
                 <div className="hospitalizado-actions-row">

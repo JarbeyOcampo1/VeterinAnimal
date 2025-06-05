@@ -45,8 +45,8 @@ function PeluqueriaForm ({onSubmit, initialPe}) {
             setTipoPeluqueria(initialPe.tipoPeluqueria);
             setEstadoPeluqueria(initialPe.estadoPeluqueria);
             setPrecioPeluqueria(initialPe.precioPeluqueria);
-            setPropietarioID(initialPe.propietarioID?.propietarioID || '');
-            setPacienteID(initialPe.pacienteID?.pacienteID || '');
+            setPropietarioID(initialPe.propietario?.propietarioID || '');
+            setPacienteID(initialPe.paciente?.pacienteID || '');
         }
     },[initialPe]);
 
@@ -88,7 +88,7 @@ function PeluqueriaForm ({onSubmit, initialPe}) {
                 <br />
                 <select className="peluqueria-select" value={hestado} onChange={(e) => setHEstado(e.target.value)} required>
                     <option className="peluqueria-select-option" value=""> Seleccionar </option>
-                    <option className="peluqueria-select-option" value="AM "> AM </option>
+                    <option className="peluqueria-select-option" value="AM"> AM </option>
                     <option className="peluqueria-select-option" value="PM"> PM </option>
                 </select>
             </div>
@@ -101,6 +101,7 @@ function PeluqueriaForm ({onSubmit, initialPe}) {
                 <select className="peluqueria-select" value={estadoPeluqueria} onChange={(e) => setEstadoPeluqueria(e.target.value)} required>
                     <option  className="peluqueria-select-option" value=""> Seleccionar </option>
                     <option  className="peluqueria-select-option" value="Reservado"> Reservado </option>
+                    <option  className="peluqueria-select-option" value="Completada"> Completada </option>
                     <option  className="peluqueria-select-option" value="Cancelado"> Cancelado </option>
                 </select>
             </div>
@@ -110,7 +111,7 @@ function PeluqueriaForm ({onSubmit, initialPe}) {
             </div>
             <div className="peluqueria-form-group">
                 <label className="peluqueria-label"> Pacientes </label>
-                <select className="peluqueria-select" value={pacienteID} onChange={(e) => setPacienteID(Number(e.target.value))} required>
+                <select className="peluqueria-select" value={pacienteID} onChange={(e) => setPacienteID(e.target.value)} required>
                     <option className="peluqueria-select-option" value=""> Seleccionar un paciente </option>
                     {pacientes.map((paciente) => (
                         <option className="peluqueria-select-option" key={paciente.pacienteID} value={paciente.pacienteID}>
@@ -121,7 +122,7 @@ function PeluqueriaForm ({onSubmit, initialPe}) {
             </div>
             <div className="peluqueria-form-group">
                 <label className="peluqueria-label"> Propietarios </label>
-                <select  className="peluqueria-select" value={propietarioID} onChange={(e) => setPropietarioID(Number(e.target.value))}>
+                <select  className="peluqueria-select" value={propietarioID} onChange={(e) => setPropietarioID(e.target.value)}>
                     <option className="peluqueria-select" value=""> Seleccionar un propietario </option>
                     {propietarios.map((propietario) => (
                         <option className="peluqueria-select-option" key={propietario.propietarioID} value={propietario.propietarioID}>

@@ -37,10 +37,10 @@ public class Cirugias {
     //Relacion con propietario (muchos a uno)
     @ManyToOne
     @JoinColumn(name="propietarioid", referencedColumnName = "propietarioID")
-    private Propietarios propietarioID;
+    private Propietarios propietario;
 
     //Relacion con paciente (muchos a uno)
     @ManyToOne
     @JoinColumn(name = "pacienteid", referencedColumnName = "pacienteID")
-    private Pacientes pacienteID;
+    private Pacientes paciente;
 }

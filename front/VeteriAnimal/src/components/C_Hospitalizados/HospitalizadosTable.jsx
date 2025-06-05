@@ -9,18 +9,18 @@ function HospitalizadosTable ({hospitalizados, onEdit, onDelete}) {
                 {/* Encabezado de la tabla con los nombres de las columnas */}
                 <thead className="hospitalizado-table-header">
                     <tr className="hospitalizado-table-row">
-                        <th className="hospitalizado-th"> F.Ingreso </th>
-                        <th className="hospitalizado-th"> F.Salida </th>
-                        <th className="hospitalizado-th"> H.Entrada </th>
-                        <th className="hospitalizado-th"> H.Salida </th>
-                        <th className="hospitalizado-th"> Estado </th>
-                        <th className="hospitalizado-th"> Tratamiento </th>
-                        <th className="hospitalizado-th"> Cuidados </th>
-                        <th className="hospitalizado-th"> Diagnostico </th>
+                        <th className="hospitalizado-th"> Fecha_Ingreso </th>
+                        <th className="hospitalizado-th"> Fecha_Salida </th>
+                        <th className="hospitalizado-th"> Hora_Entrada </th>
+                        <th className="hospitalizado-th"> Hora_Salida </th>
+                        <th className="hospitalizado-th"> Estados_pacientes </th>
+                        <th className="hospitalizado-th"> Tratamiento_pacientes </th>
+                        <th className="hospitalizado-th"> Cuidados_pacientes </th>
+                        <th className="hospitalizado-th"> Diagnostico_pacientes </th>
                         <th className="hospitalizado-th"> Precio </th>
-                        <th className="hospitalizado-th"> Observacciones </th>
-                        <th className="hospitalizado-th"> Propietarios </th>
+                        <th className="hospitalizado-th"> Observacciones_pacientes </th>
                         <th className="hospitalizado-th"> Pacientes </th>
+                        <th className="hospitalizado-th"> Propietarios </th>
                         <th className="hospitalizado-th"> Acciones </th>
                     </tr>
                 </thead>
